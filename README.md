@@ -24,7 +24,7 @@
 ## 🧱 Architecture
 
 The assistant is a **modular CLI application** with clear separation of concerns. All data stays on your laptop.
-
+![alt text](image.png)
 ```mermaid
 graph TD
     User["👤 User (CLI)"] <--> CLI["assistant.py\n(cmd.Cmd loop)"]
