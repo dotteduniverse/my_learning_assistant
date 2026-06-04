@@ -53,6 +53,13 @@ graph TD
     style Groq fill:#e6f7ff,stroke:#333
     style Chroma fill:#e6f7ff,stroke:#333
 
+## 🖥️ Web Dashboard (Optional)
+
+A Streamlit dashboard provides a graphical overview of your progress and allows you to update statuses, add topics, and generate interview Q&A.
+
+### Run the dashboard
+```bash
+streamlit run dashboard.py
 
 📦 Tech Stack
 Component	Technology	Purpose
