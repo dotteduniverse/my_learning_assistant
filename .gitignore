@@ -1,1 +1,16 @@
 .env
+core/__pycache__/interview.cpython-314.pyc
+core/__pycache__/llm_client.cpython-314.pyc
+core/__pycache__/memory.cpython-314.pyc
+core/__pycache__/stack_manager.cpython-314.pyc
+core/__pycache__/utils.cpython-314.pyc
+data/chroma_db/chroma.sqlite3
+data/chroma_db/0422222e-f7e7-40b6-9edf-9e19b6a35be1/data_level0.bin
+data/chroma_db/0422222e-f7e7-40b6-9edf-9e19b6a35be1/header.bin
+data/chroma_db/0422222e-f7e7-40b6-9edf-9e19b6a35be1/length.bin
+data/chroma_db/0422222e-f7e7-40b6-9edf-9e19b6a35be1/link_lists.bin
+data/interviews/Data_Engineering_&_Streaming.md
+data/interviews/LLM_&_Model_Layer.md
+exported_stack.mmd
+assistant.log
+.gitignore

@@ -3,7 +3,7 @@
   "topics": [
     {
       "name": "Data Engineering & Streaming",
-      "status": "not_started",
+      "status": "discussing",
       "subtopics": [
         "Apache Spark (PySpark, Structured Streaming)",
         "Apache Flink",
@@ -76,7 +76,7 @@
       "status": "not_started",
       "subtopics": [
         "FastAPI (fastapi, uvicorn)",
-        "Pydantic (v2) – Data validation, function calling",
+        "Pydantic (v2) \u2013 Data validation, function calling",
         "Async backends: asyncpg, httpx, redis-py",
         "MCP Client (Python)"
       ],
@@ -89,7 +89,7 @@
       "subtopics": [
         "Langfuse (LLM observability)",
         "OpenTelemetry (traces, metrics)",
-        "Kubernetes (EKS, AKS) – Helm, Kserve",
+        "Kubernetes (EKS, AKS) \u2013 Helm, Kserve",
         "Serverless: AWS Lambda, Azure Functions",
         "CI/CD: Azure DevOps, GitLab CI, Terraform"
       ],

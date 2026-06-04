@@ -1,27 +1,43 @@
 import os
 import json
+import logging
 from core.utils import load_json, save_json
+
+logger = logging.getLogger(__name__)
 
 STACK_FILE = "data/tech_stack.json"
 
 def load_stack():
-    return load_json(STACK_FILE)
+    logger.debug(f"Loading stack from {STACK_FILE}")
+    try:
+        stack = load_json(STACK_FILE)
+        logger.info(f"Loaded {len(stack['topics'])} topics from stack")
+        return stack
+    except Exception as e:
+        logger.error(f"Failed to load stack: {e}")
+        raise
 
 def save_stack(stack):
+    logger.debug(f"Saving stack to {STACK_FILE}")
     save_json(STACK_FILE, stack)
+    logger.info(f"Stack saved with {len(stack['topics'])} topics")
 
 def update_topic_status(topic_name, status):
+    logger.debug(f"Updating status for '{topic_name}' to '{status}'")
     stack = load_stack()
     for topic in stack['topics']:
         if topic['name'] == topic_name:
+            old = topic['status']
             topic['status'] = status
             save_stack(stack)
+            logger.info(f"Status changed from '{old}' to '{status}' for topic '{topic_name}'")
             return True
+    logger.warning(f"Topic '{topic_name}' not found")
     return False
 
 def add_topic(topic_name, subtopics=None, category=None):
+    logger.info(f"Adding new topic '{topic_name}' with subtopics: {subtopics}")
     stack = load_stack()
-    # If category given, find parent? For simplicity, we add as new main topic
     new_topic = {
         "name": topic_name,
         "status": "not_started",
@@ -31,25 +47,25 @@ def add_topic(topic_name, subtopics=None, category=None):
     }
     stack['topics'].append(new_topic)
     save_stack(stack)
-    # Ensure interview file folder exists
     os.makedirs("data/interviews", exist_ok=True)
+    logger.debug("Interview directory ensured")
     return True
 
-# Merge external JSON edits (preserve progress)
-def merge_external_updates(new_stack_json):
+def merge_external_updates(new_stack_filepath):
+    logger.info(f"Merging external stack from {new_stack_filepath}")
+    with open(new_stack_filepath, 'r') as f:
+        new_stack = json.load(f)
     current = load_stack()
-    # Map name -> current topic
     current_map = {t['name']: t for t in current['topics']}
-    for new_t in new_stack_json['topics']:
+    for new_t in new_stack['topics']:
         if new_t['name'] in current_map:
-            # keep old status, notes, interview_file if present
             old = current_map[new_t['name']]
             new_t['status'] = old['status']
             new_t['notes'] = old['notes']
             new_t['interview_file'] = old.get('interview_file', new_t.get('interview_file'))
+            logger.debug(f"Preserved progress for '{new_t['name']}': status={old['status']}")
         else:
-            # new topic, ensure interview file path
-            if 'interview_file' not in new_t:
-                new_t['interview_file'] = f"interviews/{new_t['name'].replace(' ', '_')}.md"
-    current['topics'] = new_stack_json['topics']
+            logger.info(f"New topic detected: '{new_t['name']}'")
+    current['topics'] = new_stack['topics']
     save_stack(current)
+    logger.info("Merge completed")
