@@ -25,7 +25,7 @@
 
 The assistant is a **modular CLI application** with clear separation of concerns. All data stays on your laptop.
 ![alt text](image.png)
-```mermaid
+
 graph TD
     User["👤 User (CLI)"] <--> CLI["assistant.py\n(cmd.Cmd loop)"]
     
@@ -70,3 +70,46 @@ A Groq API key – get one for free (free tier: 30 requests/minute – plenty fo
 
 Internet connection (only for Groq API calls – embeddings work offline)
 
+🧪 Example Session
+text
+(you) discuss RAG pipelines
+
+Assistant: RAG (Retrieval-Augmented Generation) combines a retriever (vector DB) with a generator (LLM). 
+It reduces hallucinations and keeps answers current. Would you like to explore retrieval strategies or generation?
+
+(you) How do I choose a vector database?
+
+Assistant: For learning, FAISS or ChromaDB are simple. For production with scaling, Pinecone or Qdrant offer 
+hybrid search and metadata filtering. Consider latency, indexing speed, and cost. What’s your use case?
+
+(you) mark RAG pipelines as discussing
+
+(you) generate interview for RAG pipelines
+
+Assistant: Interview questions generated and saved to data/interviews/RAG_pipelines.md
+
+(you) quiz RAG pipelines
+
+--- Quiz on RAG pipelines ---
+Q1: What is the main advantage of RAG over fine‑tuning?
+Your answer: It avoids retraining and can use new documents.
+✓ Correct!
+
+Q2: Name two vector indexing algorithms.
+Your answer: HNSW and IVF.
+✓ Correct!
+...
+
+(you) status
+
+--- Learning Progress ---
+Data Engineering & Streaming: not_started
+...
+RAG pipelines: discussing
+
+(you) add_topic MLOps for LLMs : LLMOps, Prompt Flow, CI/CD for prompts
+
+(you) export_mermaid
+
+Exported to exported_stack.mmd
+Now copy exported_stack.mmd into Mermaid Live to generate an updated diagram.
