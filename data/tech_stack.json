@@ -1,0 +1,54 @@
+{
+  "version": "2",
+  "topics": [
+    {
+      "name": "Data Engineering & Streaming",
+      "status": "not_started",
+      "subtopics": ["Spark", "Kafka", "Flink", "Bytewax", "Feature Store (Feast)"],
+      "notes": "",
+      "interview_file": "interviews/Data_Engineering_Streaming.md"
+    },
+    {
+      "name": "Ingestion & Indexing",
+      "status": "not_started",
+      "subtopics": ["Unstructured.io", "LlamaParse", "Chunking", "Embedding Models", "Vector DBs (Pinecone, Qdrant, FAISS)"],
+      "notes": "",
+      "interview_file": "interviews/Ingestion_Indexing.md"
+    },
+    {
+      "name": "Orchestration & Agents",
+      "status": "not_started",
+      "subtopics": ["LangChain", "LangGraph", "AutoGen", "MCP", "Memory (Redis, pgvector)"],
+      "notes": "",
+      "interview_file": "interviews/Orchestration_Agents.md"
+    },
+    {
+      "name": "LLM & Model Layer",
+      "status": "not_started",
+      "subtopics": ["OpenAI", "Anthropic", "Groq", "Hugging Face", "Fine-tuning (LoRA, PEFT)"],
+      "notes": "",
+      "interview_file": "interviews/LLM_Model_Layer.md"
+    },
+    {
+      "name": "Guardrails & Evaluation",
+      "status": "not_started",
+      "subtopics": ["Guardrails AI", "Presidio", "RAGAS", "LangSmith", "DeepEval"],
+      "notes": "",
+      "interview_file": "interviews/Guardrails_Evaluation.md"
+    },
+    {
+      "name": "API & Application Layer",
+      "status": "not_started",
+      "subtopics": ["FastAPI", "Pydantic", "Async Backends", "MCP Client"],
+      "notes": "",
+      "interview_file": "interviews/API_Application.md"
+    },
+    {
+      "name": "Observability & DevOps",
+      "status": "not_started",
+      "subtopics": ["Langfuse", "OpenTelemetry", "Kubernetes", "CI/CD (Terraform, Azure DevOps)"],
+      "notes": "",
+      "interview_file": "interviews/Observability_DevOps.md"
+    }
+  ]
+}
